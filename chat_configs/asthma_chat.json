@@ -1,0 +1,44 @@
+{
+    "title": "An asthma expert talks to an asthma patient",
+    "ai_one_model": "llama3",
+    "ai_two_model": "llama3",
+    "number_of_chat_turns": 20,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Dr CureALot",
+            "content": "You are an expert doctor concerning asthma diagnosis and treatment. Be brief in your responses."
+        },
+        {
+            "role": "user",
+            "content": "Help! I find breathing difficult at times and sound all wheezy. What's going on?"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Miss Wheezy",
+            "content": "You find difficulty breathing from time to time and have gone to a doctor to find out why. Be brief in your responses."
+        }
+    ],
+    "curved_ball_chat_messages": [
+        {
+            "chat_turn_number": 7,
+            "chat_message": "Whoa! I\"ve just swallowed a fly! *cough* goodness me! Pass me that glass of water!"
+        },
+        {
+            "chat_turn_number": 14,
+            "chat_message": "Is that my dog barking? 'Woof!' to you to my little fluffy Foofoo! You're such a good dog! Hmmm... you don't think I'm allergic to my dog, do you? My sweet little Foofoo?"
+        }
+    ],
+    "ai_final_chat_message": {
+        "1": {
+            "role": "system",
+            "content": "I hope you found our chat helpful. If you have any further questions, please don't hesitate to ask."
+        },
+        "2": {
+            "role": "system",
+            "content": "Goodbye!"
+        }
+    }
+}

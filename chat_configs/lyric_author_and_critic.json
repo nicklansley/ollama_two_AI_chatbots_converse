@@ -32,7 +32,13 @@
         }
     ],
     "ai_final_chat_message": {
-        "role": "user",
-        "content": "Apologies but got to go - but first let's enjoy those final lyrics together"
+        "1":{
+            "role": "user",
+            "content": "Apologies but got to go - but first let's enjoy those final lyrics together"
+        },
+        "2":{
+            "role": "system",
+            "content": "I'm sorry to see you go. Here are the lyrics you have written so far. I hope you enjoy them."
+        }
     }
 }

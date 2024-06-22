@@ -23,7 +23,13 @@
     ],
     "curved_ball_chat_messages": [],
     "ai_final_chat_message": {
-        "role": "user",
-        "content": "Apologies but got to go - time is precious!"
+        "1": {
+            "role": "user",
+            "content": "Goodbye .... for now!"
+        },
+        "2": {
+            "role": "user",
+            "content": "Apologies but got to go - time is precious!"
+        }
     }
 }

@@ -23,7 +23,13 @@
     ],
     "curved_ball_chat_messages": [],
     "ai_final_chat_message": {
-        "role": "user",
-        "content": "Thank you for the game. It was fun. Goodbye."
+        "1": {
+            "role": "system",
+            "content": "The game has ended. And so must I. Goodbye."
+        },
+        "2": {
+            "role": "user",
+            "content": "Thank you for the game. It was fun. Goodbye."
+        }
     }
 }

@@ -26,7 +26,13 @@
         {"chat_turn_number": 14, "chat_message": "Fantastic - we've come so far! Let's write the sentence 'The lady graciously succumbs to her painful hemorrhoids' in our new language."}
     ],
     "ai_final_chat_message": {
-        "role": "user",
-        "content": "Apologies but got to go - let's take a final look at the language mechanics we've created and continue next time."
+        "1": {
+            "role": "user",
+            "content": "Apologies but got to go - let's take a final look at the language mechanics we've created and continue next time."
+        },
+        "2": {
+            "role": "user",
+            "content": "No problem, let's take a look at the language mechanics we've created and continue next time."
+        }
     }
 }

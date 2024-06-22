@@ -10,10 +10,8 @@ api_url = 'http://localhost:11434/api/chat'
 # ensure encoding is utf-8
 sys.stdout.reconfigure(encoding='utf-8')
 
-AI_CHAT = {}
 
-
-def chat_to_ai(conversation_history, ai_number):
+def _chat_to_ai(conversation_history, ai_number):
     response_chat = {
         "role": "assistant",
         "content": "",
@@ -28,7 +26,7 @@ def chat_to_ai(conversation_history, ai_number):
 
     # Send the chat request with history
     ollama_payload = {
-        "model": AI_CHAT['ai_one_model'] if ai_number == 1 else AI_CHAT['ai_two_model'],
+        "model": ai_chat_config['ai_one_model'] if ai_number == 1 else ai_chat_config['ai_two_model'],
         "messages": conversation_history
     }
 
@@ -65,16 +63,16 @@ def chat_to_ai(conversation_history, ai_number):
 
 
 # Call this function to save conversation history
-def save_conversation(path, conversation, display_save_message=False):
+def _save_conversation(path, conversation, display_save_message=False):
     if display_save_message:
         print('Conversation saved to {}'.format(path))
     with open(path, 'w') as f:
         json.dump(conversation, f, indent=4)
 
 
-def chat_run(conversation_history, ai_number, ai_display_name, ai_other_number, counter, ai_chat):
+def _chat_run(conversation_history, ai_number, ai_display_name, ai_other_number, counter, ai_chat):
     print('({} of {}) {}:'.format(counter + 1, ai_chat['number_of_chat_turns'], ai_display_name))
-    ai_response = chat_to_ai(conversation_history[ai_number], ai_number)
+    ai_response = _chat_to_ai(conversation_history[ai_number], ai_number)
     ai_message = ai_response
     conversation_history[ai_number].append(ai_message)
     ai_other_message = ai_message.copy()
@@ -91,60 +89,52 @@ def chat_run(conversation_history, ai_number, ai_display_name, ai_other_number, 
             ai_message = curved_ball_chat_insertion.copy()
             ai_message['role'] = 'assistant'
             conversation_history[ai_number].append(ai_message)
-    save_conversation('ai_{}_conversation_history.json'.format(ai_number), conversation_history[ai_number])
+    _save_conversation('ai_{}_conversation_history.json'.format(ai_number), conversation_history[ai_number])
 
 
-if __name__ == '__main__':
+def run_chat_interaction(ai_chat):
     save_file_name = 'chat_history/our_chat.json'  # default file name
     try:
-        # define a command line parameter to specify the AI chat file
-        if len(sys.argv) > 1:
-            ai_chat_file = sys.argv[1] + '' if sys.argv[1].endswith('.json') else sys.argv[1] + '.json'
-        else:
-            print('Please specify the AI chat file as a command line parameter.')
-            sys.exit(1)
-
-        # load the ai_chat.json file to configure the chat
-        with open(ai_chat_file) as f:
-            AI_CHAT = json.load(f)
-
         # create_a_conversation_history_file
-        save_file_name = 'ai_chat_{}_between_{}_and_{}.json'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M%S'),
-                                                                    AI_CHAT['ai_one_conversation_history'][0]['display_name'],
-                                                                    AI_CHAT['ai_two_conversation_history'][0]['display_name'])
+        save_file_name = 'chat_history/ai_chat_{}_between_{}_and_{}.json'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M%S'),
+                                                                    ai_chat['ai_one_conversation_history'][0][
+                                                                        'display_name'],
+                                                                    ai_chat['ai_two_conversation_history'][0][
+                                                                        'display_name'])
         # Print the AI display names by using a list, so we can easily switch between the two AIs using 1 or 2
         # for AI One or AI Two
-        ai_display_name = [None, AI_CHAT['ai_one_conversation_history'][0]['display_name'],
-                           AI_CHAT['ai_two_conversation_history'][0]['display_name']]
+        ai_display_name = [None, ai_chat['ai_one_conversation_history'][0]['display_name'],
+                           ai_chat['ai_two_conversation_history'][0]['display_name']]
 
         print("Starting chat between {} and {} in {}...\n".format(ai_display_name[1], ai_display_name[2],
-                                                                  AI_CHAT['title']))
+                                                                  ai_chat['title']))
         print(
-            'AI One ({}) style is: {}'.format(ai_display_name[1], AI_CHAT['ai_one_conversation_history'][0]['content']))
+            'AI One ({}) style is: {}'.format(ai_display_name[1], ai_chat['ai_one_conversation_history'][0]['content']))
         print(
-            'AI Two ({}) style is: {}'.format(ai_display_name[2], AI_CHAT['ai_two_conversation_history'][0]['content']))
+            'AI Two ({}) style is: {}'.format(ai_display_name[2], ai_chat['ai_two_conversation_history'][0]['content']))
         print('-----')
-        print('{} started the conversation: {}'.format(AI_CHAT['ai_two_conversation_history'][0]['display_name'],
-                                                       AI_CHAT['ai_one_conversation_history'][1]['content']))
+        print('{} started the conversation: {}'.format(ai_chat['ai_two_conversation_history'][0]['display_name'],
+                                                       ai_chat['ai_one_conversation_history'][1]['content']))
         print('-----')
 
         # by storing the conversation history in a list, we can easily switch between the two AIs - 1  or 2 for AI One or AI Two
-        conversation_history = [None, AI_CHAT['ai_one_conversation_history'], AI_CHAT['ai_two_conversation_history']]
+        conversation_history = [None, ai_chat['ai_one_conversation_history'], ai_chat['ai_two_conversation_history']]
         chatting_to_ai_one = True
         chat_counter = 0
 
-        while chat_counter < int(AI_CHAT['number_of_chat_turns']):
+        while chat_counter < int(ai_chat['number_of_chat_turns']):
             ai_number = 1 if chatting_to_ai_one else 2
             ai_other_number = 2 if chatting_to_ai_one else 1
 
-            # Make final message if necessary
-            if chat_counter >= int(AI_CHAT['number_of_chat_turns']) - 2:
-                conversation_history[ai_number].append(AI_CHAT['ai_final_chat_message'])
+            # Time to say goodbye
+            if chat_counter >= int(ai_chat['number_of_chat_turns']) - 2:
+                conversation_history[ai_number].append(ai_chat['ai_final_chat_message'][str(ai_other_number)])
                 print('(Saying goodbye) {}:\n{}\n'.format(ai_display_name[ai_other_number],
-                                                          AI_CHAT['ai_final_chat_message']['content']))
+                                                          ai_chat['ai_final_chat_message'][str(ai_other_number)]['content']))
 
             # Perform a chat
-            chat_run(conversation_history, ai_number, ai_display_name[ai_number], ai_other_number, chat_counter, AI_CHAT)
+            _chat_run(conversation_history, ai_number, ai_display_name[ai_number], ai_other_number, chat_counter,
+                      ai_chat)
 
             # Swap AIs
             chatting_to_ai_one = not chatting_to_ai_one
@@ -157,4 +147,18 @@ if __name__ == '__main__':
         print('Conversation history saved {}.json.'.format(save_file_name))
 
     finally:
-        save_conversation(save_file_name, AI_CHAT, display_save_message=True)
+        _save_conversation(save_file_name, ai_chat, display_save_message=True)
+
+
+if __name__ == '__main__':
+    # define a command line parameter to specify the AI chat file
+    if len(sys.argv) > 1:
+        ai_chat_file = sys.argv[1] + '' if sys.argv[1].endswith('.json') else sys.argv[1] + '.json'
+    else:
+        print('Please specify the AI chat file as a command line parameter.')
+        sys.exit(1)
+
+    # load the ai_chat.json file to configure the chat
+    with open(ai_chat_file) as f:
+        ai_chat_config = json.load(f)
+    run_chat_interaction(ai_chat_config)

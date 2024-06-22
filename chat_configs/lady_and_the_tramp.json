@@ -32,7 +32,13 @@
         }
     ],
     "ai_final_chat_message": {
-        "role": "user",
-        "content": "Apologies but got to go now. Bye!"
+        "1": {
+            "role": "user",
+            "content": "Goodbyeeeee! I'm off to the ball!"
+        },
+        "2": {
+            "role": "user",
+            "content": "Bye bye! Treacle!"
+        }
     }
 }

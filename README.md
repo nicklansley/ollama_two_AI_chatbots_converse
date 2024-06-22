@@ -47,6 +47,11 @@ python chat.py chat_configs/fonz_meets_yoda
 python chat.py chat_configs/tic_tac_toe
 ```
 ## Add to the fun!
+Run this script to create a new conversation between two AI assistants by answering a series of questions.
+```bash
+python create_chat.py
+```
+THis creates a new chat configuration file in the chat_configs folder. You can then run the chat.py script with this new configuration file.
 It's the config file that provides the context for the conversation. You can create your own config file by following the format of the existing ones.
 ```
 {
@@ -83,8 +88,14 @@ It's the config file that provides the context for the conversation. You can cre
         }
     ],
     "ai_final_chat_message": {
-        "role": "user",
-        "content": "Apologies but got to go now. Bye!"
+        "1": {
+            "role": "user",
+            "content": "I have to go now. Bye!"
+        },
+        "2": {
+            "role": "user",
+            "content": "Goodbye!"
+        }
     }
 }
 ```

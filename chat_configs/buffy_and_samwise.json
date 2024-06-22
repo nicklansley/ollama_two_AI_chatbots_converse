@@ -26,7 +26,13 @@
         {"chat_turn_number": 14, "chat_message": "Wait, I think I left my oven on at home..."}
     ],
     "ai_final_chat_message": {
-        "role": "user",
-        "content": "Apologies but got to go - into the yonder!"
+        "1": {
+            "role": "user",
+            "content": "I'm off to slay some vampires. You coming?"
+        },
+        "2": {
+            "role": "system",
+            "content": "Samwise is a hobbit, not a vampire slayer. I'm off to the Shire. Bye"
+        }
     }
 }
