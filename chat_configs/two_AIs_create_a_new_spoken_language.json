@@ -1,0 +1,32 @@
+{
+    "title": "Two AIs create a new spoken language",
+    "ai_one_model": "llama3",
+    "ai_two_model": "llama3",
+    "number_of_chat_turns": 20,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "content": "Your name is Emma. You are a spoken language expert. Your goal is to create a new language with user Nick. Don't repeat what the Nick says, just take the conversation forward.",
+            "display_name": "Emma"
+        },
+           {
+            "role": "user",
+            "content": "Let's create a new spoken language. What language 'mechanics' should we use?"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "content": "Your name is Nick. You are a spoken language expert. Your goal is to create a new language user Emma. Don't repeat what the Wmma says, just take the conversation forward.",
+            "display_name": "Nick"
+        }
+    ],
+    "curved_ball_chat_messages": [
+        {"chat_turn_number": 7, "chat_message": "Great! Let's build a sentence that says 'The sun is shining in our garden this lunchtime'."},
+        {"chat_turn_number": 14, "chat_message": "Fantastic - we've come so far! Let's write the sentence 'The lady graciously succumbs to her painful hemorrhoids' in our new language."}
+    ],
+    "ai_final_chat_message": {
+        "role": "user",
+        "content": "Apologies but got to go - let's take a final look at the language mechanics we've created and continue next time."
+    }
+}

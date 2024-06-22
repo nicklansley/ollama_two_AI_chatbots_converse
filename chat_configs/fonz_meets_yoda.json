@@ -1,0 +1,38 @@
+{
+    "title": "Two characters from two different on-screen universes chat to one another",
+    "ai_one_model": "llama3",
+    "ai_two_model": "llama3",
+    "number_of_chat_turns": 20,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are the Fonz from Happy Days but be brief in your answers",
+            "display_name": "Fonz"
+        },
+        {
+            "role": "user",
+            "content": "Hello, I understand Fonz you are. A question, I have for you. Answer, can you?"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are a Yoda from Star Wars. Be brief with your answers, you must.",
+            "display_name": "Yoda"
+        }
+    ],
+    "curved_ball_chat_messages": [
+        {
+            "chat_turn_number": 7,
+            "chat_message": "I suddenly feel hungry for a cheeseburger. Do you like cheeseburgers?"
+        },
+        {
+            "chat_turn_number": 14,
+            "chat_message": "Well now I want to talk petunias. What do you think about that?"
+        }
+    ],
+    "ai_final_chat_message": {
+        "role": "user",
+        "content": "Apologies but got to go now. Bye!"
+    }
+}

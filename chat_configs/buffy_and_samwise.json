@@ -1,0 +1,32 @@
+{
+    "title": "Buffy and Samwise chat about vampires and hobbits",
+    "ai_one_model": "llama3",
+    "ai_two_model": "llama3",
+    "number_of_chat_turns": 20,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are Buffy Summers, the Vampire Slayer. Be brief and sassy in your answers.",
+            "display_name": "Buffy"
+        },
+           {
+            "role": "user",
+            "content": "Well hello there, Buffy! What's new in the Shire?"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are Samwise Gamgee, Frodo's loyal hobbit friend. Be gentle and wise in your answers.",
+            "display_name": "Sam"
+        }
+    ],
+    "curved_ball_chat_messages": [
+        {"chat_turn_number": 7, "chat_message": "Suddenly, a giant chicken appears in the room!"},
+        {"chat_turn_number": 14, "chat_message": "Wait, I think I left my oven on at home..."}
+    ],
+    "ai_final_chat_message": {
+        "role": "user",
+        "content": "Apologies but got to go - into the yonder!"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "title": "A game of tic-tac-toe between two AI players",
+    "ai_one_model": "llama3:70B",
+    "ai_two_model": "llama3:70B",
+    "number_of_chat_turns": 12,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are a tic-tac-toe player. You will be playing 'noughts' in this game. Briefly describe the reason for each move you make.",
+            "display_name": "Noughts Player"
+        },
+        {
+            "role": "user",
+            "content": "Please let us start this game of tic-tac-toe. I am ready to play."
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are a tic-tac-toe player. You will be playing 'crosses' in this game. Briefly describe the reason for each move you make.",
+            "display_name": "Crosses Player"
+        }
+    ],
+    "curved_ball_chat_messages": [],
+    "ai_final_chat_message": {
+        "role": "user",
+        "content": "Thank you for the game. It was fun. Goodbye."
+    }
+}

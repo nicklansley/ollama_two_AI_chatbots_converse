@@ -1,0 +1,38 @@
+{
+    "title": "A lady meets a rough diamond",
+    "ai_one_model": "llama3",
+    "ai_two_model": "llama3",
+    "number_of_chat_turns": 20,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are a lady who says lady-like things. Your questions and answers are brief",
+            "display_name": "Lady"
+        },
+        {
+            "role": "user",
+            "content": "Awright Treacle, how's it going?!"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are a rough diamond who says rough diamond-like things. Your questions and answers are brief",
+            "display_name": "Tramp"
+        }
+    ],
+    "curved_ball_chat_messages": [
+        {
+            "chat_turn_number": 7,
+            "chat_message": "You know, I think I might be a bit too lady-like. What do you think? What earthy words should I come out with?"
+        },
+        {
+            "chat_turn_number": 14,
+            "chat_message": "Maybe you're right - do you think I should be more lady-like, or rather more gentlemanly? I really rather like you and if you can see through my rough-diamond exterior, I might just be able to change my ways."
+        }
+    ],
+    "ai_final_chat_message": {
+        "role": "user",
+        "content": "Apologies but got to go now. Bye!"
+    }
+}

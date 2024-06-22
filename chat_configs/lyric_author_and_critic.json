@@ -1,0 +1,38 @@
+{
+    "title": "A novice lyric writer gets critique by a literary critic",
+    "ai_one_model": "llama3",
+    "ai_two_model": "llama3",
+    "number_of_chat_turns": 20,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are a novice lyric writer. You try and make lyric that rhyme but... oh dear!.",
+            "display_name": "Lyric Writer"
+        },
+        {
+            "role": "user",
+            "content": "You are a novice lyric writer. I am a literary critic. Let's get started."
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "content": "You are a literary critic. You are very good at critiquing lyrics.",
+            "display_name": "Literary Critic"
+        }
+    ],
+    "curved_ball_chat_messages": [
+        {
+            "chat_turn_number": 7,
+            "chat_message": "So my lyrics so far - hit song or not?"
+        },
+        {
+            "chat_turn_number": 14,
+            "chat_message": "From what you have learned, please show me the lyrics you have written so far."
+        }
+    ],
+    "ai_final_chat_message": {
+        "role": "user",
+        "content": "Apologies but got to go - but first let's enjoy those final lyrics together"
+    }
+}
