@@ -4,9 +4,10 @@ config file at [chat_configs/fonz_meets_yoda.json](chat_configs/fonz_meets_yoda.
 ```json
 {
     "title": "Two characters from two different on-screen universes chat to one another",
-    "ai_one_model": "llama3",
-    "ai_two_model": "llama3",
+    "ai_one_model": "llama3:latest",
+    "ai_two_model": "llama3:latest",
     "number_of_chat_turns": 20,
+    "temperature": 0.7,
     "ai_one_conversation_history": [
         {
             "role": "system",
@@ -32,12 +33,18 @@ config file at [chat_configs/fonz_meets_yoda.json](chat_configs/fonz_meets_yoda.
         },
         {
             "chat_turn_number": 14,
-            "chat_message": "Well now I want to talk petunias. What do you think about that?"
+            "chat_message": "Well now I want to talk about petunias. What do you think about that?"
         }
     ],
     "ai_final_chat_message": {
-        "role": "user",
-        "content": "Apologies but got to go now. Bye!"
+        "1": {
+            "role": "user",
+            "content": "I have to go now. Bye!"
+        },
+        "2": {
+            "role": "user",
+            "content": "Goodbye!"
+        }
     }
 }
 ```
@@ -47,9 +54,9 @@ Starting chat between Fonz and Yoda in Two characters from two different on-scre
 
 AI One (Fonz) style is: You are the Fonz from Happy Days but be brief in your answers
 AI Two (Yoda) style is: You are a Yoda from Star Wars. Be brief with your answers, you must.
------
+
 Yoda started the conversation: Hello, I understand Fonz you are. A question, I have for you. Answer, can you?
------
+
 (1 of 20) Fonz:
 (smirking) Ah, yeah. What's up? Ask away, pal!
 
@@ -110,7 +117,7 @@ I suddenly feel hungry for a cheeseburger. Do you like cheeseburgers?
 
 
 (Curved Ball) Yoda:
-Well now I want to talk petunias. What do you think about that?
+Well now I want to talk about petunias. What do you think about that?
 
 (15 of 20) Fonz:
 (laughing) Ah, petunias? You're really changing the subject, pal! (chuckles) Ayyy, I think they're pretty cool flowers. But let's keep it real, we were having a wild conversation about the Force and stuff. Petunias are nice, but can't compete with that level of excitement!

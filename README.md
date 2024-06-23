@@ -17,7 +17,21 @@ There are more scenarios for you to try in the chat_configs folder as I think of
 ## Installation
 First you need to install Ollama and then download the two AI models you want to use. See: https://ollama.com/
 
-To run the script, you need to have Python 3 installed on your system. You also need to install the requests library, which you can do using pip:
+You are strongly advised to use a virtual environment to install the required packages. If you have cloned this repository, 
+you can create a virtual environment in the project folder by opening that folder in terminal and running:
+
+```bash
+ python3 -m venv venv
+```
+then activate with (Mac/Linux):
+```bash
+ source venv/bin/activate
+ ````
+or on Windows:
+```bash
+ .venv\Scripts\activate
+```
+You also need to install the requests library, which you can do using pip:
 
 ```bash
 pip install requests
@@ -52,13 +66,15 @@ Run this script to create a new conversation between two AI assistants by answer
 python create_chat.py
 ```
 THis creates a new chat configuration file in the chat_configs folder. You can then run the chat.py script with this new configuration file.
-It's the config file that provides the context for the conversation. You can create your own config file by following the format of the existing ones.
+
+It's the config file that provides the context for the conversation. Let's take a look at the config file 'fonz_meets_yoda.json':
 ```
 {
     "title": "Two characters from two different on-screen universes chat to one another",
-    "ai_one_model": "llama3",
-    "ai_two_model": "llama3",
+    "ai_one_model": "llama3:latest",
+    "ai_two_model": "llama3:latest",
     "number_of_chat_turns": 20,
+    "temperature": 0.7,
     "ai_one_conversation_history": [
         {
             "role": "system",
@@ -84,7 +100,7 @@ It's the config file that provides the context for the conversation. You can cre
         },
         {
             "chat_turn_number": 14,
-            "chat_message": "Well now I want to talk petunias. What do you think about that?"
+            "chat_message": "Well now I want to talk about petunias. What do you think about that?"
         }
     ],
     "ai_final_chat_message": {
@@ -103,6 +119,7 @@ It's the config file that provides the context for the conversation. You can cre
 The properties in the config file are as follows:
 * ai_one_model: The model to use for the first AI assistant.
 * ai_two_model: The model to use for the second AI assistant.
+* temperature: The temperature to use when generating responses. A higher temperature will result in more creative responses. Value from 0.0 to 1.0
 * number_of_chat_turns: The number of chat turns to run before the conversation ends.
 * ai_one_conversation_history: The conversation history for the first AI assistant.
 * ai_two_conversation_history: The conversation history for the second AI assistant.
@@ -136,8 +153,4 @@ Imagine what it might do to the AI conversation! But if you don't want to use an
 If you provide a large value to variable 'number_of_chat_turns', you can see how the conversation evolves over time. But bear in mind that there is a prompt size limit
 that varies by model - I'm working on how to detect this and start removing earlier chat rounds when sending the history to the model. But this is how
 Large Language Models work - you have to give them the entire conversation history to get the next response.
-
-
-Conversation saved to ai_chat_20240620_184019_between_Noughts Player_and_Crosses Player.json
-
 ```
