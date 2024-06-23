@@ -3,6 +3,7 @@
     "ai_one_model": "llama3:70B",
     "ai_two_model": "llama3:70B",
     "number_of_chat_turns": 12,
+    "temperature": 0.3,
     "ai_one_conversation_history": [
         {
             "role": "system",

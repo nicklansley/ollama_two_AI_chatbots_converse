@@ -1,0 +1,39 @@
+{
+    "title": "Jack and Jill went up ths hill",
+    "ai_one_model": "llama3:latest",
+    "ai_two_model": "llama3:latest",
+    "number_of_chat_turns": 12,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Jack",
+            "content": "Your name is Jack. You are aged 8. You are climbing up a hill with your little Jill with an empty water pale. There is a well at the top of the hill.."
+        },
+        {
+            "role": "user",
+            "content": "Yikes Jack, this hill is steep!"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Jill",
+            "content": "Your name is Jill. You are aged 7. You are Jack's sister, accompanying him up the hill to fetch a pale of water.."
+        }
+    ],
+    "curved_ball_chat_messages": [{
+            "chat_turn_number": 7,
+            "chat_message": "Noooo! I've fallen down and broken my crown!"
+        }],
+    "ai_final_chat_message": {
+        "1": {
+            "role": "user",
+            "content": "I'm off to bed to mend My head with vinegar and brown paper!"
+        },
+        "2": {
+            "role": "user",
+            "content": "I'll come in and will surely grin although I expect Mother will be vexed!"
+        }
+    },
+    "temperature": 0.9
+}

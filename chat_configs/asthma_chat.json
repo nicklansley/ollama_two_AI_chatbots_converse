@@ -1,8 +1,9 @@
 {
     "title": "An asthma expert talks to an asthma patient",
-    "ai_one_model": "llama3",
-    "ai_two_model": "llama3",
+    "ai_one_model": "llama3:latest",
+    "ai_two_model": "llama3:latest",
     "number_of_chat_turns": 20,
+    "temperature": 0.0,
     "ai_one_conversation_history": [
         {
             "role": "system",

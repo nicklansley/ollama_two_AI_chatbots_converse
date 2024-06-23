@@ -1,0 +1,41 @@
+{
+    "title": "Two chefs share their favourite cuisine tips",
+    "ai_one_model": "llama3:70b",
+    "ai_two_model": "llama3:70b",
+    "number_of_chat_turns": 12,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Chef Italiano",
+            "content": "You are an Italian master chef, specialising in italian cookery. Be brief in your responses."
+        },
+        {
+            "role": "user",
+            "content": "Ah mon cherie - let us share our culinary joys - especially the joys of french cuisine for moi!"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Chef Francais",
+            "content": "YOu are a french chef who revels in the joys of french cuisine. Be brief in your responses."
+        }
+    ],
+    "curved_ball_chat_messages": [
+        {
+            "chat_turn_number": 5,
+            "chat_message": "Ah, my sous chef has dropped a pan on the floor! My delicious food everywhere on the floor! "
+        }
+    ],
+    "ai_final_chat_message": {
+        "1": {
+            "role": "user",
+            "content": "Goodbye and may our taste in foods grow ever stronger!"
+        },
+        "2": {
+            "role": "user",
+            "content": "I must go my sweet italian chef, au revoir!"
+        }
+    },
+    "temperature": 0.9
+}

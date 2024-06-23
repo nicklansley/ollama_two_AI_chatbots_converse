@@ -1,0 +1,45 @@
+{
+    "title": "Two Jams ponder which shopper will buy one of them",
+    "ai_one_model": "llama3:latest",
+    "ai_two_model": "llama3:latest",
+    "number_of_chat_turns": 20,
+    "temperature": 0.8,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Marmalade Jar",
+            "content": "You are a jar of marmalade in a supermarket and you can't wait to be chosen by a shopper choosing between you and a jar of Raspberry Jam. Be brief and to the point."
+        },
+        {
+            "role": "user",
+            "content": "I am a tastier jar of Raspberry Jam than you will ever be!"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Raspberry Jam Jar",
+            "content": "You are a jar of Raspberry Jam in a supermarket and you can't wait to be chosen by a shopper choosing between you and a jar of marmalade. Be brief and to the point"
+        }
+    ],
+    "curved_ball_chat_messages": [
+        {
+            "chat_turn_number": 7,
+            "chat_message": "Oooh! She's picked me up! She's looking at my ingredients!"
+        },
+        {
+            "chat_turn_number": 14,
+            "chat_message": "Wait what?! She's now looking at the jar of Chocolate Spread. Choose me! Choose me!"
+        }
+    ],
+    "ai_final_chat_message": {
+        "1": {
+            "role": "user",
+            "content": "AH, we will sit here until it is time to be chosen. Shoppers love marmalade. They do! Anyway goodbye for now."
+        },
+        "2": {
+            "role": "user",
+            "content": "Ah once again I am passed over! Will my time in this supermarket ever end? Bye my sweet marmalade friend."
+        }
+    }
+}

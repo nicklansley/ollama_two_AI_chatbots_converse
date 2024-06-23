@@ -1,8 +1,9 @@
 {
     "title": "Two AIs create a new spoken language",
-    "ai_one_model": "llama3",
-    "ai_two_model": "llama3",
+    "ai_one_model": "llama3:latest",
+    "ai_two_model": "llama3:latest",
     "number_of_chat_turns": 20,
+    "temperature": 0.9,
     "ai_one_conversation_history": [
         {
             "role": "system",

@@ -1,8 +1,9 @@
 {
     "title": "Two characters from two different on-screen universes chat to one another",
-    "ai_one_model": "llama3",
-    "ai_two_model": "llama3",
+    "ai_one_model": "llama3:latest",
+    "ai_two_model": "llama3:latest",
     "number_of_chat_turns": 20,
+    "temperature": 0.7,
     "ai_one_conversation_history": [
         {
             "role": "system",
@@ -28,7 +29,7 @@
         },
         {
             "chat_turn_number": 14,
-            "chat_message": "Well now I want to talk petunias. What do you think about that?"
+            "chat_message": "Well now I want to talk about petunias. What do you think about that?"
         }
     ],
     "ai_final_chat_message": {
