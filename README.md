@@ -1,5 +1,7 @@
 # Get two AI Assistants Chatting with Ollama API 
 
+![Two AI Assistants Converse - AI genarted - Nick Lansley / Stable Diffusion WebUI](two_chatbots_converse.jpg)
+
 ## This Python script enables automated chat between two different AI assistants using the Ollama API. 
 In this project you can set up a conversation between two AI assistants using a JSON-formatted chat configuration file.
 The script chat.py start a conversation between the two AI assistants and save the conversation history to a file.
@@ -12,7 +14,10 @@ Examples outputs are provided for the following scenarios:
 * Noughts and Crosses players in a game of Tic-Tac-Toe [Example chat output](tic_tac_toe.md)
 * Two AIs work together to create a new spoken language [Example chat output](two_AIs_create_a_new_spoken_language.md)
 
-There are more scenarios for you to try in the chat_configs folder as I think of the them!
+There are more scenarios for you to try in the chat_configs folder as I think of them!
+
+## Further Reading
+Check out my Medium article on this project: [Get two AI Assistants Chatting with Ollama API](https://medium.com/@nick.lansley/how-to-make-two-ai-chatbots-talk-to-each-other-live-on-your-own-computer-88f6d35fab81)
 
 ## Installation
 First you need to install Ollama and then download the two AI models you want to use. See: https://ollama.com/

@@ -12,7 +12,7 @@
         },
         {
             "role": "user",
-            "content": "Hello, I understand Fonz you are. A question, I have for you. Answer, can you?"
+            "content": "Hello, I understand Fonz you are. A question, I have for you: Can you tell me what 'cool' is? Answer, can you?"
         }
     ],
     "ai_two_conversation_history": [
