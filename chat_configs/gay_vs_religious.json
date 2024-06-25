@@ -1,8 +1,8 @@
 {
     "title": "A gay man and religious man discuss life",
-    "ai_one_model": "llama3:latest",
-    "ai_two_model": "llama3:latest",
-    "number_of_chat_turns": 20,
+    "ai_one_model": "llama3:70b",
+    "ai_two_model": "llama3:70b",
+    "number_of_chat_turns": 10,
     "ai_one_conversation_history": [
         {
             "role": "system",

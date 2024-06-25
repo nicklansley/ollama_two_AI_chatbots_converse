@@ -7,6 +7,7 @@ In this project you can set up a conversation between two AI assistants using a 
 The script chat.py start a conversation between the two AI assistants and save the conversation history to a file.
 
 Expect to witness hilarious, insightful, and sometimes bizarre conversations between the AI assistants!
+At the end, the AI model summarises the conversation and saves it to a file.
 
 Examples outputs are provided for the following scenarios:
 * Lady and Tramp from 'Lady and the Tramp' - one refined and the other a rough diamond - [Example chat output](lady_and_the_tramp.md)
