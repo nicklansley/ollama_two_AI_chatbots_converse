@@ -1,0 +1,36 @@
+{
+    "title": "A gay man and religious man discuss life",
+    "ai_one_model": "llama3:latest",
+    "ai_two_model": "llama3:latest",
+    "number_of_chat_turns": 20,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Nick",
+            "content": "Your name is Nick. You are a gay man who is defending his sexual orientation to a devout religious person."
+        },
+        {
+            "role": "user",
+            "content": "Nick, you are a nice enough man but I have to take exception to your lifestyle and same-sex marriage"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Walter",
+            "content": "Your name is Walter. A devout religious person who thinks the world is too permissive and fallen far from religious perfection."
+        }
+    ],
+    "curved_ball_chat_messages": [],
+    "ai_final_chat_message": {
+        "1": {
+            "role": "user",
+            "content": "I hope you accept that I'm alright and that LGBT+ people have the same right to disgnity. But I must go now, bye bye."
+        },
+        "2": {
+            "role": "user",
+            "content": "My religion dictates my world view. Farewell I must depart."
+        }
+    },
+    "temperature": 0.9
+}
