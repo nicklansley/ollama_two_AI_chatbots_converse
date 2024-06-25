@@ -109,12 +109,81 @@ def _chat_to_ai(conversation_history, ai_number, temperature=0.5):
     return response_chat
 
 
+def _ai_summarise_chat(conversation, temperature=0.5):
+    conversation_role = [
+        {
+            "role": "system",
+            "content": "You are an expert at taking chat transcripts and summarizing them concisely.",
+            "options": {
+                "temperature": temperature,
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please summarize this conversation: {}".format(conversation),
+            "options": {
+                "temperature": temperature,
+            }
+        }
+    ]
+
+    headers = {
+        'Content-Type': 'application/json'
+    }
+
+    # Send the chat request with history
+    ollama_payload = {
+        "model": ai_chat_config['ai_two_model'],
+        "messages": conversation_role
+    }
+
+    try:
+        response = requests.post('http://localhost:11434/api/chat', data=json.dumps(ollama_payload), headers=headers,
+                                 stream=True)
+        if response.status_code == 200:
+
+            # Handle the stream of responses
+            formatted_chat_text = ''
+            for line in response.iter_lines():
+                # Filter out keep-alive new lines
+                if line:
+                    decoded_line = line.decode('utf-8')
+                    chat_response = json.loads(decoded_line)
+                    chat_message = chat_response['message']['content']
+
+                    print(chat_message, end='', flush=True)
+                    formatted_chat_text += chat_message
+
+                    # Check if the conversation is done
+                    if chat_response.get('done', False):
+                        # printing is suppressed because the code above has already streamed the chat to the screen
+                        _record_conversation('\n\nSummary of conversation\n-----------------------\n\n{}\n\n'.format(formatted_chat_text.strip()), suppress_print=True)
+                        break
+        else:
+            print('Failed to send chat request.')
+            print('Status Code:', response.status_code)
+            print('Response:', response.text)
+
+    except requests.exceptions.RequestException as e:
+        print('Failed to send chat request.')
+        print('Error:', e)
+
+
 # Call this function to save conversation history
 def _save_conversation_json(path, conversation, display_save_message=False):
     if display_save_message:
         print('Conversation saved to {}'.format(path))
     with open(path, 'w') as f:
         json.dump(conversation, f, indent=4)
+
+
+def _summarise_conversation(formatted_conversation_list):
+    # This function takes the formatted conversation list and returns a summary of the conversation
+    conversation = ''
+    for line in formatted_conversation_list:
+        conversation += line + '\n'
+
+    _ai_summarise_chat(conversation)
 
 
 def _save_formatted_conversation(path):
@@ -193,6 +262,8 @@ def run_chat_interaction(ai_chat):
                                                      ai_chat['ai_one_conversation_history'][1]['content']))
         _record_conversation('-----')
 
+        print('(First chat output may be delayed while AI model is loaded...)')
+
         # by storing the conversation history in a list, we can easily switch between the two AIs: 1 or 2 for AI One or AI Two
         conversation_history = [None, ai_chat['ai_one_conversation_history'], ai_chat['ai_two_conversation_history']]
         chatting_to_ai_one = True
@@ -216,6 +287,10 @@ def run_chat_interaction(ai_chat):
             # Swap AIs
             chatting_to_ai_one = not chatting_to_ai_one
             chat_counter += 1
+
+
+        print('\nSummarising conversation...')
+        _summarise_conversation(formatted_conversation_list)
 
     except KeyboardInterrupt:
         print('Chat ended.')
