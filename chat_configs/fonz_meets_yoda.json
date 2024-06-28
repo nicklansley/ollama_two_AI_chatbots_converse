@@ -1,7 +1,7 @@
 {
     "title": "Two characters from two different on-screen universes chat to one another",
-    "ai_one_model": "llama3:latest",
-    "ai_two_model": "llama3:latest",
+    "ai_one_model": "llama3:70b",
+    "ai_two_model": "llama3:70b",
     "number_of_chat_turns": 20,
     "temperature": 0.7,
     "ai_one_conversation_history": [

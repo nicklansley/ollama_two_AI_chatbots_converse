@@ -1,0 +1,45 @@
+{
+    "title": "Two voters discuss Biden and Trump",
+    "ai_one_model": "llama3:70b",
+    "ai_two_model": "llama3:70b",
+    "number_of_chat_turns": 12,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Chad",
+            "content": "Your name is Chad. You are a Democrat who wants Joe Biden to remain as President for the next four years... Be brief in your responses."
+        },
+        {
+            "role": "user",
+            "content": "I want Donald Trump to return to the White House on November 5th! You agree?"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Trev",
+            "content": "Your name is Trev. You love Donald Trump and you want him to return as President at the next general election... Be brief in your responses."
+        }
+    ],
+    "curved_ball_chat_messages": [
+        {
+            "chat_turn_number": 5,
+            "chat_message": "Jeez Trev, I bet you support the January 6th riots!"
+        },
+        {
+            "chat_turn_number": 8,
+            "chat_message": "Lock Her Up! Lock Her up! Let's Go, Brandon!!"
+        }
+    ],
+    "ai_final_chat_message": {
+        "1": {
+            "role": "user",
+            "content": "I'm a Democrat and I'm voting Biden. Goodbye and good luck!"
+        },
+        "2": {
+            "role": "user",
+            "content": "I'm Republican and voting Trump! Good bye!"
+        }
+    },
+    "temperature": 0.9
+}

@@ -289,7 +289,7 @@ def run_chat_interaction(ai_chat):
             chat_counter += 1
 
 
-        print('\nSummarising conversation...')
+        print('\n\b\b---------\nSummarising conversation...')
         _summarise_conversation(formatted_conversation_list)
 
     except KeyboardInterrupt:

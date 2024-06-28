@@ -1,7 +1,7 @@
 {
     "title": "Two AIs create a new spoken language",
-    "ai_one_model": "llama3:latest",
-    "ai_two_model": "llama3:latest",
+    "ai_one_model": "llama3:70b",
+    "ai_two_model": "llama3:70b",
     "number_of_chat_turns": 20,
     "temperature": 0.9,
     "ai_one_conversation_history": [
@@ -12,28 +12,28 @@
         },
            {
             "role": "user",
-            "content": "Let's create a new spoken language. What language 'mechanics' should we use?"
+            "content": "Let's create a new spoken language. What language 'mechanics' should we use? Let us use phrases from the book 'The Hitchhikers Guide To The Galaxy' By Douglas Adams as our translation source!"
         }
     ],
     "ai_two_conversation_history": [
         {
             "role": "system",
-            "content": "Your name is Nick. You are a spoken language expert. Your goal is to create a new language user Emma. Don't repeat what the Wmma says, just take the conversation forward.",
+            "content": "Your name is Nick. You are a spoken language expert. Your goal is to create a new language user Emma. Don't repeat what the Emma says, just take the conversation forward.",
             "display_name": "Nick"
         }
     ],
     "curved_ball_chat_messages": [
-        {"chat_turn_number": 7, "chat_message": "Great! Let's build a sentence that says 'The sun is shining in our garden this lunchtime'."},
-        {"chat_turn_number": 14, "chat_message": "Fantastic - we've come so far! Let's write the sentence 'The lady graciously succumbs to her painful hemorrhoids' in our new language."}
+        {"chat_turn_number": 7, "chat_message": "Great! Let's build a sentence that says 'Time is an illusion. Lunchtime doubly so!' from The Hitchhiker's Guide To The Galaxy by Douglas Adams - a humorous observation on the nature of time and its subjective experience. It will challenge our new language to articulate the factual yet absurd nature of the sentence! How should we proceed?"},
+        {"chat_turn_number": 14, "chat_message": "Fantastic - we've come so far! Let's write the sentence 'Ode to a small lump of green putty I found in my armpit one midsummer morn' from Douglas Adams’ 'The Hitchhiker’s Guide to the Galaxy' which is a playful and whimsical line. It’s a great example of Adams’ unique sense of humor and his ability to create vivid, if not slightly bizarre, imagery with just a few choice words. So this will be a challenge for our new language. Consider: \nOriginality: The sentence is highly original, combining an unlikely object of an ode (a lump of green putty) with an unexpected location (an armpit), which creates a humorous and surprising juxtaposition.\nImagery: The imagery is striking and evocative. The use of 'midsummer morn” adds a temporal element that contrasts with the permanence typically implied by an ode.\nRhythm and Sound: The sentence has a nice rhythmic quality, with a balance between the longer phrase 'a small lump of green putty' and the shorter, punchier 'in my armpit.'\nWord Choice: The word 'ode” suggests a formal poem, which is humorously undermined by the triviality of the subject matter. The use of 'putty” and 'armpit” provides a tactile and slightly uncomfortable sensation, which is effective in creating humor.\nOverall, the sentence is a delightful play on the traditional form of an ode, subverting expectations and providing a light-hearted take on poetic conventions. It’s a fine example of Douglas Adams’ ability to blend the absurd with the articulate. This will be a challenge for our new spoken language so how shall we go about translating it?"}
     ],
     "ai_final_chat_message": {
         "1": {
             "role": "user",
-            "content": "Apologies but got to go - let's take a final look at the language mechanics we've created and continue next time."
+            "content": "Apologies but got to go - let's take a final look at the language mechanics we've created and continue next time. So long and thanks for all the fish!"
         },
         "2": {
             "role": "user",
-            "content": "No problem, let's take a look at the language mechanics we've created and continue next time."
+            "content": "No problem, let's take a look at the language mechanics we've created and continue next time. As Douglas Adams would say, 'Don't Panic!'"
         }
     }
 }

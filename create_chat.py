@@ -89,9 +89,7 @@ if __name__ == '__main__':
         ai_one_system_role['content'] = input(
             'Describe the character of {} (e.g. You are an expert in ... / You are a character from ... ) > '.format(
                 ai_one_system_role['display_name']))
-        ai_one_system_role['content'] = 'Your name is {}. {}.'.format(ai_one_system_role['display_name'],
-                                                                      ai_one_system_role['content'])
-        chat_dict['ai_one_conversation_history'] = [ai_one_system_role]
+
         if input(
                 'Do you want this character to be brief in their responses? (y if brief / n or press enter for model default) > ').lower() == 'y':
             ai_one_system_role['content'] += '. Be brief in your responses.'
@@ -103,12 +101,20 @@ if __name__ == '__main__':
         ai_two_system_role['content'] = input(
             'Describe the character of {} (e.g. You want to know about ... / You are afraid of ...  ) > '.format(
                 ai_two_system_role['display_name']))
-        ai_two_system_role['content'] = 'Your name is {}. {}.'.format(ai_two_system_role['display_name'],
+        ai_two_system_role['content'] = 'Your name is {} and you are talking to {}. {}.'.format(
+                                                                ai_two_system_role['display_name'],
+                                                                      ai_one_system_role['display_name'],
                                                                       ai_two_system_role['content'])
         chat_dict['ai_two_conversation_history'] = [ai_two_system_role]
         if input(
                 'Do you want this character to be brief in their responses? (y if brief / n or press enter for model default) > ').lower() == 'y':
             ai_two_system_role['content'] += '. Be brief in your responses.'
+
+        ai_one_system_role['content'] = 'Your name is {} and you are talking to {}. {}.'.format(
+                                                                     ai_one_system_role['display_name'],
+                                                                      ai_two_system_role['display_name'],
+                                                                      ai_one_system_role['content'])
+        chat_dict['ai_one_conversation_history'] = [ai_one_system_role]
 
         chat_dict['ai_one_conversation_history'].append({
             "role": "user",

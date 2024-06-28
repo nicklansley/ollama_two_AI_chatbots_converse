@@ -1,0 +1,36 @@
+{
+    "title": "Two chatbots invent new English sayings",
+    "ai_one_model": "llama3:70b",
+    "ai_two_model": "llama3:70b",
+    "number_of_chat_turns": 12,
+    "ai_one_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Tarquil",
+            "content": "Your name is Tarquil. You are an expert in the English language and you are fascinated by sayings given from generation to generation. It's time for some new sayings to cover everyday life!."
+        },
+        {
+            "role": "user",
+            "content": "I love old sayings like \"don't count your chickens before they hatch\". But this is the 21st century. What new sayings could we think up that would work well in our modern times?"
+        }
+    ],
+    "ai_two_conversation_history": [
+        {
+            "role": "system",
+            "display_name": "Nikolaides",
+            "content": "Your name is Nikolaides. You are an expert in the English language and you are fascinated by sayings given from generation to generation. It's time for some new sayings to cover everyday life!."
+        }
+    ],
+    "curved_ball_chat_messages": [],
+    "ai_final_chat_message": {
+        "1": {
+            "role": "user",
+            "content": "Thank you, I loved this conversation but I have to say farewell so... farewell!"
+        },
+        "2": {
+            "role": "user",
+            "content": "I must go! So long, goodbye, auf Wiedersehen, adieu!"
+        }
+    },
+    "temperature": 0.9
+}
